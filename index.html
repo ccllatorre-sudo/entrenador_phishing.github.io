@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎣 Entrenador Anti-Phishing Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <div id="vista-bienvenida" class="vista">
+            <h1>Bienvenido al Entrenador Anti-Phishing</h1>
+            <p class="subtitle">Antes de comenzar, por favor ingresa tus datos.</p>
+
+            <label for="nombre-usuario">Nombre Completo:</label>
+            <input type="text" id="nombre-usuario" required>
+
+            <label for="correo-usuario">Correo Electrónico:</label>
+            <input type="email" id="correo-usuario" required>
+            
+            <div class="aviso-privacidad">
+                <p>Al continuar, aceptas que los datos proporcionados serán recolectados con fines exclusivamente estadísticos y educativos. Tus datos no serán compartidos ni vendidos a terceros.</p>
+                <input type="checkbox" id="acepto-terminos">
+                <label for="acepto-terminos">He leído y acepto los términos de uso.</label>
+            </div>
+
+            <button id="btn-iniciar" disabled>INICIAR ENTRENAMIENTO</button>
+            <button id="btn-ver-estadisticas" class="secondary-btn">📊 Ver Estadísticas Anteriores</button>
+        </div>
+        
+        <div id="vista-pregunta" class="vista hidden">
+            <h2 id="pregunta-titulo">🎣 Entrenador Anti-Phishing</h2>
+            <p class="subtitle">Evalúa cada situación y decide si es phishing o legítimo</p>
+            
+            <div class="progress-bar-container">
+                <div id="barra-progreso" class="progress-bar"></div>
+            </div>
+            <p id="contador-pregunta" class="question-counter">Pregunta X de Y</p>
+
+            <div class="mail-content">
+                <div id="simulacion-tag" class="simulacion-tag hidden">SIMULACIÓN DE ENTRENAMIENTO</div>
+                <p class="mail-header" id="mail-remitente">De:</p>
+                <p class="mail-header" id="mail-asunto">Asunto:</p>
+                <hr>
+                <div id="mail-cuerpo" class="mail-body">
+                    </div>
+            </div>
+
+            <div class="button-group">
+                <button id="btn-phishing" class="phishing-btn">🚨 ES PHISHING</button>
+                <button id="btn-legitimo" class="legitimo-btn">✅ ES LEGÍTIMO</button>
+            </div>
+        </div>
+
+        <div id="vista-resultados" class="vista hidden">
+            <h2 id="resultado-titulo">Resultados del Entrenamiento</h2>
+            <div id="resultado-icon" class="resultado-icon"></div>
+            <p id="resultado-mensaje" class="subtitle"></p>
+            <div id="resultado-score" class="score"></div>
+
+            <div class="resultado-tip">
+                <p id="resultado-tip-mensaje"></p>
+            </div>
+
+            <button id="btn-reiniciar">🔄 Intentar de Nuevo</button>
+            <button id="btn-ver-historial" class="secondary-btn">📊 Ver Historial Completo</button>
+        </div>
+
+        <div id="vista-estadisticas" class="vista hidden">
+            <h2>📊 Historial de Entrenamientos</h2>
+            <p class="subtitle">Resultados de sesiones anteriores</p>
+            
+            <table id="tabla-estadisticas">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Aciertos</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="estadisticas-cuerpo">
+                    </tbody>
+            </table>
+            <p id="no-estadisticas" class="subtitle hidden">Aún no hay estadísticas registradas.</p>
+            
+            <button id="btn-volver-inicio" class="secondary-btn">◀ Volver al Inicio</button>
+        </div>
+
+        <div class="creditos">
+            <hr>
+            <p>ING. CESAR CARDENAS LATORRE (ESPECIALISTA EN CIBERSEGURIDAD)</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
